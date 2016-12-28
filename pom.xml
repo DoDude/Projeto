@@ -7,7 +7,7 @@
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<description>Desenvolvimento de aplicação web para correção ortográfico usando VRaptor</description>
+	<description>Desenvolvimento de aplicação web</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
