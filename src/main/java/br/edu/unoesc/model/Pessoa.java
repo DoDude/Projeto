@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -31,6 +32,8 @@ public @Data class Pessoa implements MinhaEntidade {
 	protected String genero;
 	@OneToMany(mappedBy = "pessoa", targetEntity = Atendimento.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Atendimento> atendimentos;
+	
+	@OneToOne
 	private Endereco endereco;
 
 }

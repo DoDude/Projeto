@@ -18,6 +18,8 @@ public @Data class Fornecedor {
 	private String telefone1;
 	private String telefone2;
 	private String descricao;
+	
+	@OneToOne
 	private Endereco endereco;
 	
 	@OneToOne
