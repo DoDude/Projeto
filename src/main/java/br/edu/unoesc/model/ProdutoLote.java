@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
-public @Data class Produto implements MinhaEntidade{
+public @Data class ProdutoLote implements MinhaEntidade{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected Long codigo;
@@ -21,10 +21,15 @@ public @Data class Produto implements MinhaEntidade{
 	private String temValidade;
 	private LocalDateTime dt_fabricacao;
 	private LocalDateTime dt_validade;
+	private Integer quantidade;
 	
 	@ManyToOne
 	@JoinColumn(name="lote_codigo")
 	private Lote lote;
+	
+	@ManyToOne
+	@JoinColumn(name="ordem_codigo")
+	private Ordem ordem;
 	
 	
 }

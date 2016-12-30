@@ -35,5 +35,8 @@ public @Data class Pessoa implements MinhaEntidade {
 	
 	@OneToOne
 	private Endereco endereco;
+	
+	@OneToMany(mappedBy = "cliente", targetEntity = Ordem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Ordem> ordens;
 
 }

@@ -3,6 +3,8 @@ package br.edu.unoesc.model;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 import lombok.Data;
@@ -16,4 +18,7 @@ public @Data class Funcionario extends Pessoa implements MinhaEntidade{
 	private String cargo;
 	private Double salario;
 	
+	@ManyToOne
+	@JoinColumn(name="ordem_codigo")
+	private Ordem ordem;
 }

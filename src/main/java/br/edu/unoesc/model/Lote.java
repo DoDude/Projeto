@@ -20,8 +20,8 @@ public @Data class Lote {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	private LocalDateTime dt_recebimento;
-	@OneToMany(mappedBy = "lote", targetEntity = Produto.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Produto> produtos;
+	@OneToMany(mappedBy = "lote", targetEntity = ProdutoLote.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<ProdutoLote> produtos;
 	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy="lote", optional = true)
 	private Fornecedor fornecedor;
