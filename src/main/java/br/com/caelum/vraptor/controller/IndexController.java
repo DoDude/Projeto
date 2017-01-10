@@ -27,8 +27,17 @@ public class IndexController {
 
 	@Path("/")
 	public void index(){
-		result.include("li_active", "index");		
+		
+	
 	}
+	
+	@Path("/home")
+	public void home(){
+		
+		
+	}
+	
+	
 
 
 }
