@@ -18,7 +18,6 @@ import javax.persistence.InheritanceType;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public @Data class Pessoa implements MinhaEntidade {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,5 +37,8 @@ public @Data class Pessoa implements MinhaEntidade {
 	
 	@OneToMany(mappedBy = "cliente", targetEntity = Ordem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Ordem> ordens;
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy="pessoa", optional = true)
+	private Funcionario funcionario;
 
 }

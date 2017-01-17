@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,13 +35,13 @@
   <div class="login-box-body">
     <p class="login-box-msg">Acesso ao sistema</p>
 
-    <form action="../../index2.html" method="post">
+    <form action="<c:url value="/verificaFuncionario"/>" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Usuário">
+        <input name="funcionario.usuario" type="text" class="form-control" placeholder="Usuário">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Senha">
+        <input name="funcionario.senha" type="password" class="form-control" placeholder="Senha">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
