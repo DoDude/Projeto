@@ -1,5 +1,6 @@
 package br.edu.unoesc.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -29,6 +30,7 @@ public @Data class Pessoa implements MinhaEntidade {
 	protected String telefone2;
 	protected String email;
 	protected String genero;
+	
 	@OneToMany(mappedBy = "pessoa", targetEntity = Atendimento.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Atendimento> atendimentos;
 	
@@ -38,7 +40,7 @@ public @Data class Pessoa implements MinhaEntidade {
 	@OneToMany(mappedBy = "cliente", targetEntity = Ordem.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Ordem> ordens;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy="pessoa", optional = true)
-	private Funcionario funcionario;
+	@OneToMany(mappedBy = "pessoa", targetEntity = Funcionario.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Funcionario> funcionarios = new ArrayList<>();
 
 }

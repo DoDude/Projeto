@@ -14,7 +14,7 @@ public class FuncionarioDAO extends HibernateDAO<Funcionario> {
 		try {
 			TypedQuery<Funcionario> query = em.createNamedQuery("FILTRA_POR_LOGIN_E_SENHA",
 					Funcionario.class);
-			query.setParameter("login", login);
+			query.setParameter("usuario", login);
 			query.setParameter("senha", senha);
 			return query.getSingleResult();
 		} catch (NoResultException e) {
@@ -29,7 +29,7 @@ public class FuncionarioDAO extends HibernateDAO<Funcionario> {
 		try {
 			TypedQuery<Funcionario> query = em.createNamedQuery("FILTRA_POR_LOGIN_E_SENHA",
 					Funcionario.class);
-			query.setParameter("login", usuario.getUsuario());
+			query.setParameter("usuario", usuario.getUsuario());
 			query.setParameter("senha", usuario.getSenha());
 			return query.getSingleResult();
 		} catch (NoResultException e) {
